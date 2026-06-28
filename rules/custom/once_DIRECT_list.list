@@ -1,5 +1,26 @@
-# 个人直连规则
-# 此文件由用户手动维护，GitHub Actions 不会覆盖
-
-# 示例：特定域名直连
-# example.com
+# 作为个人自定义直连list
+#个人相关域名
+DOMAIN-SUFFIX,9681792.xyz
+# PT站点
+-DOMAIN-SUFFIX,icc2022.com
+DOMAIN-SUFFIX,hddolby.com
+DOMAIN-SUFFIX,zmpt.cc
+DOMAIN-SUFFIX,hdfans.org
+-DOMAIN-SUFFIX,hdmayi.com
+DOMAIN-SUFFIX,hdvideo.top
+DOMAIN-SUFFIX,m-team.cc
+DOMAIN-SUFFIX,m-team.io
+DOMAIN-SUFFIX,nanyangpt.com
+DOMAIN-SUFFIX,hdtime.org
+DOMAIN-SUFFIX,ubits.club
+DOMAIN-SUFFIX,audiences.me
+DOMAIN-SUFFIX,pterclub.com
+DOMAIN-SUFFIX,btschool.club
+DOMAIN-SUFFIX,htpt.cc
+DOMAIN-SUFFIX,pttime.org
+DOMAIN-SUFFIX,cyanbug.net
+DOMAIN-SUFFIX,hhanclub.top
+# 查询ip网址
+DOMAIN-SUFFIX,checkip.dyndns.com
+# 后续
+#

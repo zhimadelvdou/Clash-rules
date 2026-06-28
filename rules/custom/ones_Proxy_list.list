@@ -1,5 +1,7 @@
-# 个人代理规则
-# 此文件由用户手动维护，GitHub Actions 不会覆盖
-
-# 示例：特定域名强制走代理
-# example.com
+# 作为个人自定义代理list
+# Emotn Store域名
+DOMAIN-SUFFIX,keeflys.com
+# 小雅说明文件
+DOMAIN-SUFFIX,xiaoyaliu.notion.site
+# 后续
+#

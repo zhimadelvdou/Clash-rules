@@ -1,5 +1,5 @@
-# 个人选择规则
-# 此文件由用户手动维护，GitHub Actions 不会覆盖
-
-# 示例：特定域名由用户手动选择节点
-# example.com
+# miss
+DOMAIN-SUFFIX,missav.com
+DOMAIN-SUFFIX,missav.media
+DOMAIN-SUFFIX,missav.mrst.one
+DOMAIN-SUFFIX,surrit.com
