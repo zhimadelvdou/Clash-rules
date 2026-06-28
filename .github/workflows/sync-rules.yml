@@ -23,6 +23,12 @@ jobs:
         run: |
           set -e
 
+          # 创建目标目录（-p 确保幂等，目录存在时不报错）
+          mkdir -p rules/MetaCubeX/geosite
+          mkdir -p rules/MetaCubeX/geoip
+          mkdir -p rules/wwqgtxx
+          mkdir -p rules/ACL4SSR
+
           # ========== MetaCubeX/meta-rules-dat ==========
           BASE_METACUBEX="https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta"
 
