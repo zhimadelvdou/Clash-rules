@@ -63,7 +63,7 @@ jobs:
           declare -A GEOIP_RULES=(
             ["private"]="private.mrs"
             ["telegram"]="telegram.mrs"
-            ["china_ip"]="china_ip.mrs"
+            ["cn"]="cn.mrs"
           )
 
           for rule in "${!GEOIP_RULES[@]}"; do
