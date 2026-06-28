@@ -1,0 +1,95 @@
+name: Sync Clash Rules
+
+# 触发条件：每天凌晨3点（UTC）= 北京时间11点，支持手动触发
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download rules from upstream
+        run: |
+          set -e
+
+          # ========== MetaCubeX/meta-rules-dat ==========
+          BASE_METACUBEX="https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta"
+
+          # geosite rules
+          declare -A GEOSITE_RULES=(
+            ["private"]="private.mrs"
+            ["category-ads-all"]="category-ads-all.mrs"
+            ["telegram"]="telegram.mrs"
+            ["category-ai-!cn"]="category-ai-!cn.mrs"
+            ["category-games@cn"]="category-games@cn.mrs"
+            ["category-games"]="category-games.mrs"
+            ["googlefcm"]="googlefcm.mrs"
+            ["onedrive"]="onedrive.mrs"
+            ["bing"]="bing.mrs"
+            ["microsoft"]="microsoft.mrs"
+            ["apple"]="apple.mrs"
+            ["youtube"]="youtube.mrs"
+            ["category-media-cn"]="category-media-cn.mrs"
+            ["category-media"]="category-media.mrs"
+            ["cn"]="cn.mrs"
+            ["geolocation-!cn"]="geolocation-!cn.mrs"
+          )
+
+          for rule in "${!GEOSITE_RULES[@]}"; do
+            echo "Downloading MetaCubeX/geosite/${rule}.mrs ..."
+            curl -fL "${BASE_METACUBEX}/geo/geosite/${rule}.mrs" \
+              -o "rules/MetaCubeX/geosite/${rule}.mrs" \
+              --retry 3 --retry-delay 5
+          done
+
+          # geoip rules
+          declare -A GEOIP_RULES=(
+            ["private"]="private.mrs"
+            ["telegram"]="telegram.mrs"
+            ["china_ip"]="china_ip.mrs"
+          )
+
+          for rule in "${!GEOIP_RULES[@]}"; do
+            echo "Downloading MetaCubeX/geoip/${rule}.mrs ..."
+            curl -fL "${BASE_METACUBEX}/geo/geoip/${rule}.mrs" \
+              -o "rules/MetaCubeX/geoip/${rule}.mrs" \
+              --retry 3 --retry-delay 5
+          done
+
+          # ========== wwqgtxx/clash-rules ==========
+          echo "Downloading wwqgtxx/fakeip-filter.mrs ..."
+          curl -fL "https://raw.githubusercontent.com/wwqgtxx/clash-rules/release/fakeip-filter.mrs" \
+            -o "rules/wwqgtxx/fakeip-filter.mrs" \
+            --retry 3 --retry-delay 5
+
+          # ========== ACL4SSR/ACL4SSR ==========
+          echo "Downloading ACL4SSR/UnBan.list ..."
+          curl -fL "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list" \
+            -o "rules/ACL4SSR/UnBan.list" \
+            --retry 3 --retry-delay 5
+
+          echo "All rules downloaded successfully."
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add rules/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-sync rules from upstream $(date +%Y-%m-%d)"
+            git push
+            echo "Changes pushed."
+          fi
