@@ -36,6 +36,7 @@ jobs:
           declare -A GEOSITE_RULES=(
             ["private"]="private.mrs"
             ["category-ads-all"]="category-ads-all.mrs"
+            ["github"]="github.mrs"
             ["telegram"]="telegram.mrs"
             ["category-ai-!cn"]="category-ai-!cn.mrs"
             ["category-games@cn"]="category-games@cn.mrs"
