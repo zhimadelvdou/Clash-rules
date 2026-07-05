@@ -41,7 +41,7 @@ jobs:
             ["category-ai-!cn"]="category-ai-!cn.mrs"
             ["category-games@cn"]="category-games@cn.mrs"
             ["category-games"]="category-games.mrs"
-            ["googlefcm"]="googlefcm.mrs"
+            ["google"]="google.mrs"
             ["onedrive"]="onedrive.mrs"
             ["bing"]="bing.mrs"
             ["microsoft"]="microsoft.mrs"
@@ -64,6 +64,7 @@ jobs:
           declare -A GEOIP_RULES=(
             ["private"]="private.mrs"
             ["telegram"]="telegram.mrs"
+            ["google"]="google.mrs"
             ["cn"]="cn.mrs"
           )
 
