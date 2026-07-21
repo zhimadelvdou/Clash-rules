@@ -12,3 +12,7 @@ DOMAIN-SUFFIX,segment.com
 DOMAIN-SUFFIX,launchdarkly.com
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,claude.site
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,statsig.com
