@@ -1,0 +1,14 @@
+# category-ai-!cn 缺失的 AI 风控/验证/指纹域名
+# 补充人机验证、Statsig 遥测、功能灰度、行为打点等 App/Web 端
+# 没有这些域名走代理，移动端会被识别出真实地区
+DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,livekit.cloud
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN-SUFFIX,api.statsig.com
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,segment.io
+DOMAIN-SUFFIX,segment.com
+DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,identrust.com
