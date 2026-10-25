@@ -27,3 +27,4 @@ DOMAIN-SUFFIX,checkip.dyndns.com
 DOMAIN-SUFFIX,hyperframes.dev
 # 后续
 #
+IP-CIDR,217.217.78.213/32,no-resolve
