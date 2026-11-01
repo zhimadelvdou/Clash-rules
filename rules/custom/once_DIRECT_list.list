@@ -26,5 +26,7 @@ DOMAIN-SUFFIX,checkip.dyndns.com
 # HyperFrames
 DOMAIN-SUFFIX,hyperframes.dev
 # 后续
-#
+#代理vpn
 IP-CIDR,217.217.78.213/32,no-resolve
+#企业vpn
+DOMAIN-SUFFIX,vpn.bre600708.com
