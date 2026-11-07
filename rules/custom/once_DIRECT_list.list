@@ -30,3 +30,5 @@ DOMAIN-SUFFIX,hyperframes.dev
 IP-CIDR,217.217.78.213/32,no-resolve
 #企业vpn
 DOMAIN-SUFFIX,vpn.bre600708.com
+#quicker 社区版下载
+DOMAIN-SUFFIX,quicker.space
